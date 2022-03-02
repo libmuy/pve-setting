@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ETHTOOL=/sbin/ethtool
+
+test -x $ETHTOOL || exit 0
+
+[ "$IFACE" != "eno1" ] && exit 0
+
+#echo "enable eno1's wol function" > /tmp/wol.log
+
+$ETHTOOL -s eno1 wol g
