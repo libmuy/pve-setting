@@ -14,4 +14,11 @@ git clone https://github.com/libmuy/pve-setting.git || failed "download repo"
 
 pushd pve-setting
 make
+
+grep -q user .git/config || cat <<EOS >> .git/config
+[user]
+        name = Libmuy
+        maile = libmuy@gmail.com
+EOS
+
 popd
